@@ -1,0 +1,26 @@
+.title{
+	font-family: 'Henny+Penny';
+	font-size: 2em;
+	font-weight: bold;
+}
+
+.coffee{
+	width: 250px;
+	margin: 0 auto;
+}
+
+.coffee-img{
+	margin: 0 auto;
+}
+
+.name{
+	font-size: 2em;
+}
+
+.open{
+	color: green;
+}
+
+.closed{
+	color: red;
+}

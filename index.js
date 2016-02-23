@@ -3,17 +3,19 @@ var app = express();
 var request = require("request");
 var bodyParser = require("body-parser");
 // var Router = require("./controllers");
-app.use(bodyParser.urlencoded({extened: false}));
+app.use(bodyParser.urlencoded({extended: false}));
 var ejsLayouts = require("express-ejs-layouts");
 app.use(ejsLayouts);
 app.set("view engine", "ejs")
-app.use(express.static(__dirname + "/static"));
+app.use(express.static(__dirname + '/static'));
 
 app.get("/",function(req,res){
 	res.render("index.ejs");
 });
 
 app.use("./router.js", require("./controllers/router.js"));
+app.use("/coffee", require("./controllers/coffee.js"));
+app.use("/favorites", require("./controllers/favorites.js"));
 
 
 

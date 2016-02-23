@@ -1,0 +1,53 @@
+<h1>Coffee shops near you</h1>
+
+	<% coffeeShop.businesses.forEach(function(coffeeShop){ %>
+
+		<div class="well">	
+
+			<h1 class="name"> <%= coffeeShop.name %> </h1>
+
+			<p>Rating:<img src="<%= coffeeShop.rating_img_url_large %>"/> </p>
+
+			<p>Address: <%= coffeeShop.location.display_address %></p>
+
+			<p>Phone Number: <%= coffeeShop.phone %> </p>
+
+			<p> <% if (coffeeShop.is_closed == false){ %>
+
+				<span class="open">Open</span>
+
+				<% } else { %>
+
+					<span class="closed">Closed</span>
+
+				<% } %>
+			</p>
+
+
+			<p>Yelp Page: <a href="<%= coffeeShop.url %>" target="_blank"> <%= coffeeShop.url %> </a> </p>
+
+			<img src="<%= coffeeShop.image_url %>"/>
+
+			<p><%= coffeeShop.id %></p>
+
+			<form action="./controllers/favorites/<%= coffeeShop.name %>" method="POST" role="form">
+
+					<input value="<%= coffeeShop.name %>" id="name" name="name">
+
+					<input value="<%= coffeeShop.location.display_address %>" id="address" name="address">
+
+					<input value="<%= coffeeShop.phone%>" id="phone" name="phone">
+
+					<input value="<%= coffeeShop.is_closed %>" id="is_closed" name="is_closed">
+
+					<input value="<%= coffeeShop.url %>" id="url" name="url">
+
+					<button type="submit" class="btn btn-primary">+ to favorites</button>
+
+			</form>
+			
+		</div>
+
+
+
+	<% }); %>
