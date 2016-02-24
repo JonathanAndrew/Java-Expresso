@@ -10,28 +10,27 @@
 		<a class="title navbar-brand " href="#">Welcome to Java-Expresso</a>
 	</div>
 
-	<form method="GET" action="/signup" class="navbar-right">
-		<button type="submit" action="/signup" class=" btn btn-primary">Sign-Up</button>
-	</form>
-			
-	
 	<!-- Collect the nav links, forms, and other content for toggling -->
-	
+	<div class="collapse navbar-collapse navbar-ex1-collapse">
+
+		<form action="/favorites" method="GET">
+			<button class="btn btn-primary navbar-right">Go To Favorites</button>
+		</form>
+
+		<form action="/users/logout" method="POST">
+			<button class="btn btn-danger navbar-right">Log Out</button>
+		</form>
+
+		<form method="GET" action="/coffee" class="navbar-form navbar-left" role="search">
+			<div class="form-group">
+				<input type="text" name="location" class="form-control" placeholder="Search for location">
+			</div>
+			<button type="submit" class="btn btn-default">Submit</button>
+		</form>
+		
+	</div><!-- /.navbar-collapse -->
 </nav>
-
-	<form method="POST" action="/users" class="navbar-form navbar-left" role="search">
-	
-		<input name="email" placeholder="Email"></input>
-		<input type="password" name="password" placeholder="Password"></input>
-		<button type="submit" class="btn btn-default">Login</button>
-
-	</form>
 
 <div class="coffee">
 	<img class="coffee-img" src="images/coffeeImg.jpeg"/>
 </div>
-
-
-
-
-

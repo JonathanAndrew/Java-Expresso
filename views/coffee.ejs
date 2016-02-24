@@ -28,24 +28,28 @@
 
 			<img src="<%= coffeeShop.image_url %>"/>
 
-			<p><%= coffeeShop.id %></p>
+			
 
-			<form action="./controllers/favorites/<%= coffeeShop.name %>" method="POST" role="form">
+			<form action="/favorites" method="POST" role="form">
 
 					<input value="<%= coffeeShop.name %>" id="name" name="name">
 
 					<input value="<%= coffeeShop.location.display_address %>" id="address" name="address">
 
-					<input value="<%= coffeeShop.phone%>" id="phone" name="phone">
+					<input value="<%= coffeeShop.phone%>" id="phone" name="phone_number">
 
 					<input value="<%= coffeeShop.is_closed %>" id="is_closed" name="is_closed">
 
 					<input value="<%= coffeeShop.url %>" id="url" name="url">
 
+					<input value="<%= coffeeShop.image_url %>" id="image_url" name="image_url">
+
+					<input value="<%= coffeeShop.rating_img_url_large %>" name="rating_img_url_large">
+
 					<button type="submit" class="btn btn-primary">+ to favorites</button>
 
 			</form>
-			
+
 		</div>
 
 

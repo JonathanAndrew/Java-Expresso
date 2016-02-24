@@ -1,0 +1,23 @@
+<h1>Favorites</h1>
+
+<% favorites.forEach(function(favorites){ %>
+
+	<div class="well">
+		<h1> <%= favorites.name  %> </h1>
+		<p> <img src="<%= favorites.rating_img_url_large %>"/> </p>
+		<p> <%= favorites.address%> </p>
+		<p> <%= favorites.phone_number%></p>
+		<p> <% if (favorites.is_closed == false){ %>
+
+				<span class="open">Open</span>
+
+				<% } else { %>
+
+					<span class="closed">Closed</span>
+
+				<% } %>
+			</p>
+		<p> <img src="<%= favorites.image_url %>"/></p>
+
+	</div>
+	<% }) %>
