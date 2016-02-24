@@ -24,3 +24,63 @@
 .closed{
 	color: red;
 }
+
+.button{
+	margin-top: 1%;
+	margin-right: 5%;
+}
+
+.logout{
+	margin-top: 1%;
+	margin-right: 19%;
+}
+
+.myBtn{
+	box-shadow: 1px 1px #000;
+	font-size: 1.2em;
+	border-radius: 0;
+}
+
+.myBtn:active{
+	transform: translateY(5px);
+}
+
+.favorites{
+	margin-top: 1%;
+	margin-right: 2%;
+}
+
+.crossRotate {
+    -webkit-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -o-transition-duration: 1s;
+     transition-duration: 1s;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+     transition-property: transform;
+}
+
+.crossRotate:hover {
+    -webkit-transform: rotate(10deg);
+    -ms-transform: rotate(10deg);
+     transform: rotate(10deg);
+}
+
+#map {
+  height: 500px;
+}
+
+@media screen and (min-width: 400px) and (max-width: 768px){
+
+.button{
+	margin-top: 0;
+	margin-left: 48%;
+}
+
+.myBtn{
+	box-shadow: .001px .001px #000;
+}
+
+
+}

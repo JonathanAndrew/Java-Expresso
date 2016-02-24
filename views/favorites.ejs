@@ -1,13 +1,16 @@
 <h1>Favorites</h1>
 
+<a href="/users" class="btn btn-primary">&larr;Home</a>
+
 <% favorites.forEach(function(favorites){ %>
 
 	<div class="well">
-		<h1> <%= favorites.name  %> </h1>
+		<h1>Name: <%= favorites.name  %> </h1>
 		<p> <img src="<%= favorites.rating_img_url_large %>"/> </p>
-		<p> <%= favorites.address%> </p>
-		<p> <%= favorites.phone_number%></p>
-		<p> <% if (favorites.is_closed == false){ %>
+		<p>Address: <%= favorites.address%> </p>
+		<p>Phone-Number: <%= favorites.phone_number%></p>
+		<p>Yelp Page: <a href="<%= favorites.yelp_url %>" target="_blank"> <%= favorites.yelp_url %> </a> </p>
+		<p>Open/Closed: <% if (favorites.is_closed == false){ %>
 
 				<span class="open">Open</span>
 
@@ -19,5 +22,23 @@
 			</p>
 		<p> <img src="<%= favorites.image_url %>"/></p>
 
+		<a href="/showMap/<%= favorites.id %>" class="btn info-btn">Show on map</a>
+		
+		<div class="row">
+		  <div class="col-md-6">
+		    <h2>Map</h2>
+		    <div id="map"></div>
+		  </div>
+		</div>
+
+
 	</div>
 	<% }) %>
+
+<script>
+    var markers = <%- JSON.stringify(favorites) %>;
+</script>
+  <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHAgZlw_Ju2QuBNf90fsdYxQKRIyUyxH4&callback=initMap">
+  </script>
+<script src="/js/script.js"></script>

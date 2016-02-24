@@ -1,4 +1,6 @@
 'use strict';
+var geocoder = require("geocoder");
+
 module.exports = function(sequelize, DataTypes) {
   var favorite = sequelize.define('favorite', {
     name: DataTypes.STRING,
@@ -40,7 +42,13 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
 
-    is_closed: DataTypes.BOOLEAN
+    is_closed: DataTypes.BOOLEAN,
+
+    lat : DataTypes.STRING,
+  
+
+    lng : DataTypes.STRING
+    
 
   }, {
     classMethods: {

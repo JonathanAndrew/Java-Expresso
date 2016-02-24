@@ -1,0 +1,18 @@
+
+
+<h1>Map to <%= favorite.name %> </h1>
+
+<div class="row">
+  <div class="col-md-6">
+    <h2>Map</h2>
+    <div id="map"></div>
+  </div>
+</div>
+
+<script>
+    var markers = [<%- JSON.stringify(favorite) %>];
+</script>
+  <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHAgZlw_Ju2QuBNf90fsdYxQKRIyUyxH4&callback=initMap">
+  </script>
+<script src="/js/script.js"></script>

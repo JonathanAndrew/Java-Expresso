@@ -6,6 +6,8 @@ var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended: false}));
 var ejsLayouts = require("express-ejs-layouts");
 var session = require("express-session");
+var db = require("./models");
+
 app.use(ejsLayouts);
 app.set("view engine", "ejs")
 app.use(express.static(__dirname + '/static'));
@@ -17,6 +19,18 @@ app.use(session({
 
 app.get("/",function(req,res){
 	res.render("index.ejs");
+});
+
+app.get("/users",function(req,res){
+	res.render("users.ejs");
+});
+
+app.get("/showMap/:id", function(req, res){
+	var id = req.params.id
+	db.favorite.findById(id).then(function(favorite){
+	res.render("showMap.ejs", {favorite : favorite});	
+	});
+	
 });
 
 app.use("./router.js", require("./controllers/router.js"));

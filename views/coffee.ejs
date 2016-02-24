@@ -1,5 +1,7 @@
 <h1>Coffee shops near you</h1>
 
+<a href="/users" class="btn btn-primary">Back To Search</a>
+
 	<% coffeeShop.businesses.forEach(function(coffeeShop){ %>
 
 		<div class="well">	
@@ -32,19 +34,24 @@
 
 			<form action="/favorites" method="POST" role="form">
 
-					<input value="<%= coffeeShop.name %>" id="name" name="name">
+					<input type="hidden" value="<%= coffeeShop.name %>" id="name" name="name">
 
-					<input value="<%= coffeeShop.location.display_address %>" id="address" name="address">
+					<input type="hidden" value="<%= coffeeShop.location.display_address %>" id="address" name="address">
 
-					<input value="<%= coffeeShop.phone%>" id="phone" name="phone_number">
+					<input type="hidden" value="<%= coffeeShop.phone%>" id="phone" name="phone_number">
 
-					<input value="<%= coffeeShop.is_closed %>" id="is_closed" name="is_closed">
+					<input type="hidden" value="<%= coffeeShop.is_closed %>" id="is_closed" name="is_closed">
 
-					<input value="<%= coffeeShop.url %>" id="url" name="url">
+					<input type="hidden" value="<%= coffeeShop.url %>" id="url" name="url">
 
-					<input value="<%= coffeeShop.image_url %>" id="image_url" name="image_url">
+					<input type="hidden" value="<%= coffeeShop.image_url %>" id="image_url" name="image_url">
 
-					<input value="<%= coffeeShop.rating_img_url_large %>" name="rating_img_url_large">
+					<input type="hidden" value="<%= coffeeShop.rating_img_url_large %>" name="rating_img_url_large">
+
+					<input  value="<%= coffeeShop.location.coordinate.latitude%>" name="lat">
+
+					<input  value="<%= coffeeShop.location.coordinate.latitude%>" name="lng">
+
 
 					<button type="submit" class="btn btn-primary">+ to favorites</button>
 

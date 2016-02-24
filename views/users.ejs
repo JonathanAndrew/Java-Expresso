@@ -13,13 +13,17 @@
 	<!-- Collect the nav links, forms, and other content for toggling -->
 	<div class="collapse navbar-collapse navbar-ex1-collapse">
 
-		<form action="/favorites" method="GET">
-			<button class="btn btn-primary navbar-right">Go To Favorites</button>
-		</form>
+		<div class="favorites">
+			<form action="/favorites" method="GET">
+				<button class="btn myBtn crossRotate btn-primary navbar-right">Go To Favorites</button>
+			</form>
+		</div>
 
-		<form action="/users/logout" method="POST">
-			<button class="btn btn-danger navbar-right">Log Out</button>
-		</form>
+		<div class="logout">
+			<form action="/users/logout" method="POST">
+				<button class="myBtn crossRotate btn btn-danger navbar-right">Log Out</button>
+			</form>
+		</div>
 
 		<form method="GET" action="/coffee" class="navbar-form navbar-left" role="search">
 			<div class="form-group">
