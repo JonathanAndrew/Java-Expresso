@@ -45,4 +45,4 @@ app.use("/signup", require("./controllers/signup.js"));
 // var port = 3000;
 // app.listen("Listening to the smooth sounds of port " + port);
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000)
