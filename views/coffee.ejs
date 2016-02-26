@@ -1,6 +1,12 @@
-<h1>Coffee shops near you</h1>
 
-<a href="/users" class="btn btn-primary">Back To Search</a>
+<nav class="navbar navbar-default" role="navigation">
+
+	<a class="titleSignUp navbar-brand" href="/">Java-Expresso</a>
+	<a href="/" class="homeBTN navbar-right crossRotate">Home</a>
+	<a href="/users" class="homeBTN crossRotate">Search</a>
+</nav>
+
+<h1 class="coffeeShops">Coffee shops near you</h1>
 
 	<% coffeeShop.businesses.forEach(function(coffeeShop){ %>
 
@@ -8,13 +14,13 @@
 
 			<h1 class="name"> <%= coffeeShop.name %> </h1>
 
-			<p>Rating:<img src="<%= coffeeShop.rating_img_url_large %>"/> </p>
+			<p class="info">- Rating:<img src="<%= coffeeShop.rating_img_url_large %>"/> </p>
 
-			<p>Address: <%= coffeeShop.location.display_address %></p>
+			<p class="address">- Address: <%= coffeeShop.location.display_address %></p>
 
-			<p>Phone Number: <%= coffeeShop.phone %> </p>
+			<p class="info">- Phone Number: <%= coffeeShop.phone %> </p>
 
-			<p> <% if (coffeeShop.is_closed == false){ %>
+			<p class="info">- Open/Closed <% if (coffeeShop.is_closed == false){ %>
 
 				<span class="open">Open</span>
 
@@ -26,7 +32,7 @@
 			</p>
 
 
-			<p>Yelp Page: <a href="<%= coffeeShop.url %>" target="_blank"> <%= coffeeShop.url %> </a> </p>
+			<p class="yelp">- Yelp Page: <a href="<%= coffeeShop.url %>" target="_blank"> <%= coffeeShop.url %> </a> </p>
 
 			<img src="<%= coffeeShop.image_url %>"/>
 
@@ -48,9 +54,9 @@
 
 					<input type="hidden" value="<%= coffeeShop.rating_img_url_large %>" name="rating_img_url_large">
 
-					<input  value="<%= coffeeShop.location.coordinate.latitude%>" name="lat">
+					<input type="hidden" value="<%= coffeeShop.location.coordinate.latitude%>" name="lat">
 
-					<input  value="<%= coffeeShop.location.coordinate.longitude%>" name="lng">
+					<input type="hidden" value="<%= coffeeShop.location.coordinate.longitude%>" name="lng">
 
 
 					<button type="submit" class="btn btn-primary">+ to favorites</button>
@@ -62,3 +68,5 @@
 
 
 	<% }); %>
+
+

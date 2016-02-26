@@ -1,11 +1,27 @@
-<h1>Sign up</h1>
 
-	<a href="/" class="btn btn-primary">Home Page</a>
-	<div class="well">
-		<form action="/signup" method="POST" >
-			<input name="name" placeholder="Name"></input>
-			<input name="email" placeholder="Email"></input>
-			<input type="password" name="password" placeholder="Password"></input>
-			<button type="submit" class="btn btn-primary">Sign-up</button>
-		</form>
+
+<nav class="navbar navbar-default" role="navigation">
+
+	<a class="titleSignUp navbar-brand " href="/signup">Sign-up</a>
+	<a href="/" class="homeBTN navbar-right crossRotate">Home</a>
+</nav>
+
+	<div class="signUpContainer">
+		<div class="well signUpBox">
+			<form action="/signup" class="signUpForm" method="POST" >
+				<input class="inputBox" name="name" placeholder="Name"></input>
+				<input class="inputBox" name="email" placeholder="Email"></input>
+				<input class="inputBox" type="password" name="password" placeholder="Password"></input>
+				<input class="inputBox" type="password" name="confirmPassword" placeholder="Confirm Password"></input>
+				<button type="submit" class="btn btn-primary">Sign-up</button>
+			</form>
+		</div>
 	</div>
+
+<div class="container">
+	
+	<div class="coffee coffeeSignUp">
+		<img class="coffee-img-signup" src="../images/coffeeCup2.jpeg"/>
+	</div>
+
+</div>

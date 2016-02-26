@@ -1,16 +1,18 @@
-<h1>Favorites</h1>
+<nav class="navbar navbar-default" role="navigation">
 
-<a href="/users" class="btn btn-primary">&larr;Home</a>
+	<a class="titleFavorite navbar-brand" href="/favorites">Favorites</a>
+	<a href="/users" class="homeBTN crossRotate">Search</a>
+</nav>
 
 <% favorites.forEach(function(favorites){ %>
 
 	<div class="well">
-		<h1>Name: <%= favorites.name  %> </h1>
+		<h1 class="name">Name: <%= favorites.name  %> </h1>
 		<p> <img src="<%= favorites.rating_img_url_large %>"/> </p>
-		<p>Address: <%= favorites.address%> </p>
-		<p>Phone-Number: <%= favorites.phone_number%></p>
-		<p>Yelp Page: <a href="<%= favorites.yelp_url %>" target="_blank"> <%= favorites.yelp_url %> </a> </p>
-		<p>Open/Closed: <% if (favorites.is_closed == false){ %>
+		<p class="Address">- Address: <%= favorites.address%> </p>
+		<p class="info">- Phone-Number: <%= favorites.phone_number%></p>
+		<p class="yelp">- Yelp Page: <a href="<%= favorites.yelp_url %>" target="_blank"> <%= favorites.yelp_url %> </a> </p>
+		<p class="info">- Open/Closed: <% if (favorites.is_closed == false){ %>
 
 				<span class="open">Open</span>
 
@@ -22,16 +24,8 @@
 			</p>
 		<p> <img src="<%= favorites.image_url %>"/></p>
 
-		<a href="/showMap/<%= favorites.id %>" class="btn info-btn">Show on map</a>
+		<a href="/showMap/<%= favorites.id %>" class="btn info-btn ">Show on map</a>
 		
-		<div class="row">
-		  <div class="col-md-6">
-		    <h2>Map</h2>
-		    <div id="map"></div>
-		  </div>
-		</div>
-
-
 	</div>
 	<% }) %>
 

@@ -8,7 +8,8 @@ router.get("/", function(req,res){
 
 router.post("/", function(req,res){
 	console.log(req.body);
-	db.user.findOrCreate({
+	if(req.body.password == req.body.confirmPassword){
+		db.user.findOrCreate({
 
 		where : {
 			name : req.body.name,
@@ -28,6 +29,10 @@ router.post("/", function(req,res){
 		}).catch(function(err){
 			res.send("Password must be 8-20 characters")
 		});
+		}else{
+			res.render("error.ejs");
+		}
+	
 	});
 
 
