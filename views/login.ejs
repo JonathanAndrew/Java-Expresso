@@ -1,17 +1,23 @@
-
-
-<nav class="navbar navbar-default" role="navigation">
-	<!-- Brand and toggle get grouped for better mobile display -->
-	<div class="navbar-header">
-		<a class="navbar-brand" href="#">Login</a>
+<div class="container">
+	<div class="mission">
+		<!-- <h1  class="mission-text-line-one">Find The Perfect Coffee!</h1>
+		<h2 class="mission-text-line-two">Let Java-Expresso find a coffee shop for you.</h2>
+		 <h2 class="trademark">Happiness is only a cup away.<span class="tm">&trade;</span><h2> -->
+		<h2 class="mission-text-line-two">Please Log-in or <span><a href="/signup">Sign-up</a> </span></h2> 
 	</div>
-</nav>
 
-<div class="well">
-	<form action="users" method="POST">
-		<input name="email" placeholder="email"></input>
-		<input name="password" placeholder="password"></input>
-		<button type="submit" class="btn btn-primary crossRotate">Log-in</button>
+
+
+<div class="login">
+	<form method="POST" action="/users" class="login-form " role="search">
+	
+		<input class="input" name="email" placeholder="Email"></input>
+		<input class="input" type="password" name="password" placeholder="Password"></input>
+		<button type="submit" class="login-btn btn btn-default crossRotate">Login</button>
+
 	</form>
 </div>
 
+<div class="coffee">
+	<img class="coffee-img" src="../images/coffeeCup2.jpeg"/>
+</div>

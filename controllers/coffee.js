@@ -15,7 +15,7 @@ var yelp = new Yelp({
 
 
 router.get("/",function(req,res){
-yelp.search({ term: 'coffee', location: req.query.location })
+yelp.search({ term: 'coffee', ll: req.query.ll })
 .then(function (data) {
 	// res.send(data);
   res.render("coffee.ejs", {coffeeShop : data});

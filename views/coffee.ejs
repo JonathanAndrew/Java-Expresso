@@ -1,26 +1,16 @@
-
-<nav class="navbar navbar-default" role="navigation">
-
-	<a class="titleSignUp navbar-brand" href="/">Java-Expresso</a>
-	<a href="/" class="homeBTN navbar-right crossRotate">Home</a>
-	<a href="/users" class="homeBTN crossRotate">Search</a>
-</nav>
-
 <h1 class="coffeeShops">Coffee shops near you</h1>
 
 	<% coffeeShop.businesses.forEach(function(coffeeShop){ %>
 
 		<div class="well">	
 
-			<h1 class="name"> <%= coffeeShop.name %> </h1>
+			<h1 class="name"> <%= coffeeShop.name %><img class="rating" src="<%= coffeeShop.rating_img_url_large %>"/>  </h1>
 
-			<p class="info">- Rating:<img src="<%= coffeeShop.rating_img_url_large %>"/> </p>
+			<p class="address">Address: <%= coffeeShop.location.display_address %></p>
 
-			<p class="address">- Address: <%= coffeeShop.location.display_address %></p>
+			<p class="info">Phone Number: <%= coffeeShop.phone %> </p>
 
-			<p class="info">- Phone Number: <%= coffeeShop.phone %> </p>
-
-			<p class="info">- Open/Closed <% if (coffeeShop.is_closed == false){ %>
+			<p class="info">Open/Closed <% if (coffeeShop.is_closed == false){ %>
 
 				<span class="open">Open</span>
 
@@ -32,11 +22,11 @@
 			</p>
 
 
-			<p class="yelp">- Yelp Page: <a href="<%= coffeeShop.url %>" target="_blank"> <%= coffeeShop.url %> </a> </p>
+			<!-- <p class="yelp">- Yelp Page: <a href="<%= coffeeShop.url %>" target="_blank"> <%= coffeeShop.url %> </a> </p> -->
 
 			<img src="<%= coffeeShop.image_url %>"/>
 
-			
+			<h3 class="addCoffeeShop">ADD COFFEE SHOP TO YOUR &#9829's PAGE AND VIEW IT ON A MAP</h3>
 
 			<form action="/favorites" method="POST" role="form">
 
@@ -59,7 +49,7 @@
 					<input type="hidden" value="<%= coffeeShop.location.coordinate.longitude%>" name="lng">
 
 
-					<button type="submit" class="btn btn-primary">+ to favorites</button>
+					<button type="submit" class="addFavorite btn btn-primary">+ &#9829</button>
 
 			</form>
 

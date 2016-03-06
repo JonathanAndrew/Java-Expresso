@@ -17,12 +17,33 @@ app.use(session({
   saveUninitialized: true
 }));
 
+app.use(function(req, res, next) {
+  if (req.session.user) {
+    db.user.findById(req.session.user).then(function(user) {
+      req.currentUser = user;
+      res.locals.currentUser = user;
+      next();
+    });
+  } else {
+    req.currentUser = false;
+    res.locals.currentUser = false;
+    next();
+  }
+  console.log(res.locals.currentUser);
+});
+
 app.get("/",function(req,res){
 	res.render("index.ejs");
 });
 
 app.get("/users",function(req,res){
 	res.render("users.ejs");
+});
+
+
+
+app.get("/login", function(req,res){
+	res.render("login.ejs");
 });
 
 app.get("/showMap/:id", function(req, res){
@@ -38,7 +59,9 @@ app.use("/coffee", require("./controllers/coffee.js"));
 app.use("/favorites", require("./controllers/favorites.js"));
 app.use("/users", require("./controllers/users.js"));
 app.use("/signup", require("./controllers/signup.js"));
-   			
+
+
+
 
 // var port = 3000;
 // app.listen("Listening to the smooth sounds of port " + port);

@@ -7,15 +7,15 @@ var db = require('../models');
 router.post('/', function(req,res){
 	db.user.authenticate(req.body.email,req.body.password, function(err, user){
 		if(!err && user){
-			req.session.user = user
-			res.render("users");
+			req.session.user = user.id;
+			res.redirect("/favorites");
 		}else {
 			res.send("Password/Email don't match!")
 		}
 	});
 });
 
-router.post("/logout", function(req,res){
+router.get("/logout", function(req,res){
 	req.session.destroy();
 	res.redirect("/");
 })
