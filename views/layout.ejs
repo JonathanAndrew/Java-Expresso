@@ -31,13 +31,13 @@
 
 		<% if(!currentUser) { %>
 
-			<li class="link active"><a href="/login">Login</a></li>
-			<li class="link active"><a href="/signup">Sign-up</a></li>
+			<li class="linkBTN link active"><a href="/login">Login</a></li>
+			<li class="linkBTN link active"><a href="/signup">Sign-up</a></li>
 
 		<% } else { %>	
 
 			<li class="link active favoriteBTN"><a href="/favorites" class="favorite">&#9829</a></li>
-			<li class="homeBTN link active"><a href="/" class="home homeBTN " >&#8962</a></li>
+			<li class="homeBTN link active"><a href="/" class="home" >&#8962</a></li>
 			<li class="logOutBTN link active"><a href="/users/logout">Log-Out</a></li>
 
 			<% } %>

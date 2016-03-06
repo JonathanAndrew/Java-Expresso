@@ -1,5 +1,5 @@
 body{
-	background-image: url("../images/coffee2.jpeg");
+	background-image: url("http://i.imgur.com/qrCDcgN.jpg");
 	 -webkit-background-size: cover;
   	-moz-background-size: cover;
   	-o-background-size: cover;
@@ -7,6 +7,7 @@ body{
 	background-repeat: none;
 	background-position: center;
 	min-width: 350px;
+	max-width: 1500px;
 }
 
 .navbar{
@@ -45,14 +46,29 @@ footer{
 }
 
 .navbar-toggle{
-	margin-right: 10%;
+	margin-right: 5%;
+	color: #fff;
 	border-color: #000;
+	background-color: rgba(0,0,0,.5);
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+.icon-bar{
+	background-color: #000;
 }
 
 .searchBTN{
 	margin: 0 auto;
 	position: absolute;
 	z-index: 3;
+}
+
+.linkBTN{
+	width: 100px;
+	float: right;
 }
 
 
@@ -412,7 +428,7 @@ text-align: center;
 
 .name{
 	font-family: 'Lobster', cursive;
-	font-size: 3em;
+	font-size: 2.5em;
 	text-decoration: underline;
 }
 
@@ -745,17 +761,28 @@ text-align: center;
 	width: 420px;
 }
 
+
 .sign-up{
 	margin-right: 1%;
 	margin-top: 5%
 }
 
+.homeBTN{
+	width: 75px;
+	float: right;
+}
+
 
 .favoriteBTN{
-	margin-top: 5%
+	margin-top: 5%;
+	width: 75px;
+	float: right;
 }
+
 .logOutBTN{
-	margin-top: 5%
+	margin-top: 5%;
+	width: 100px;
+	float: right;
 }
 
 
@@ -809,6 +836,7 @@ text-align: center;
 	float: right;
 	margin-top: 6%;
 }
+
 
 .navbar-nav{
 	width: 60px;
@@ -1072,12 +1100,12 @@ text-align: center;
 .title{
 	margin-top: 2%;
 	margin-left: 0;
-	font-size: 2em;
-	width: 290px;
+	font-size: 1.8em;
+	width: 264px;
 }
 
 .searchBox{
-	margin: 100% auto;
+	margin: 34% auto;
 }
 
 .searchContainer{
@@ -1145,6 +1173,12 @@ text-align: center;
 	margin-right: 3.5%;
 	font-size: 1.5em;
 	margin-top: 6%;
+	width: 75px;
+	float: right;
+}
+
+.navbar-nav{
+	width: 125px;
 }
 
 .favoritesPage{
@@ -1154,11 +1188,15 @@ text-align: center;
 .favoriteBTN{
 	font-size: 1.5em;
 	margin-top: 5%;
+	width: 75px;
+	float: right;
 }
 
 .logOutBTN{
 	font-size: 1.5em;
 	margin-top: 6%;
+	width: 115px;
+	float: right;
 }
 
 
@@ -1179,7 +1217,6 @@ text-align: center;
 
 .coffee-img{
 	width: 88%;
-	margin-top: 15%;
 }
 
 .coffee-img-signup{
