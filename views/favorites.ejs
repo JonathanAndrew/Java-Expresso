@@ -1,35 +1,41 @@
 <div class="backSearchContainer">
 	<form id="searchLocation" method="GET" action="/coffee" class="backSearchBox" role="search">
 		<input type="hidden" id="demo" name="ll"></input>
-		<button type="submit" id="search" class="backBTN submitBTN btn btn-default crossRotate">&larr; &#9749</button>
+		<button type="submit" id="search" class="backBTN btn btn-default">&larr; &#9749</button>
 	</form>
 </div>
 
+
 <div class="favoritesPage">
+	<h1 class="favTitle">Favorite Coffee Shops</h1>
+		<% favorites.forEach(function(favorites){ %>
 
-	<% favorites.forEach(function(favorites){ %>
+		<div class="well favs">
+			<a href="/favorites/<%=favorites.id%>" class="delete-link btn delete btn-danger" action="/favorites/delete/<%=favorites.id%>" method="GET"  data-token="{{ csrf_token() }}" role="form">X
+				<!-- <button type="submit" class="btn delete btn-danger">X</button> -->
+			</a>
+			<h1 class="name"><%= favorites.name  %> <img class="rating"src="<%= favorites.rating_img_url_large %>"/>  </h1>
+			
+			<p class="address">Address: <%= favorites.address%> </p>
+			<p class="info">Phone-Number: <%= favorites.phone_number%></p>
+			<p class="info">Open/Closed: <% if (favorites.is_closed == false){ %>
 
-	<div class="well">
-		<h1 class="name">Name: <%= favorites.name  %> <img class="rating"src="<%= favorites.rating_img_url_large %>"/>  </h1>
-		<p class="address">Address: <%= favorites.address%> </p>
-		<p class="info">Phone-Number: <%= favorites.phone_number%></p>
-		<p class="info">Open/Closed: <% if (favorites.is_closed == false){ %>
+					<span class="open">Open</span>
 
-				<span class="open">Open</span>
+					<% } else { %>
 
-				<% } else { %>
+						<span class="closed">Closed</span>
 
-					<span class="closed">Closed</span>
+					<% } %>
+				</p>
+			<p> <img src="<%= favorites.image_url %>"/></p>
 
-				<% } %>
-			</p>
-		<p> <img src="<%= favorites.image_url %>"/></p>
-
-		<a href="/showMap/<%= favorites.id %>" class="btn info-btn mapBTN">Show on map</a>
-		
-	</div>
-	<% }) %>
+			<a href="/showMap/<%= favorites.id %>" class="btn info-btn mapBTN">Show on map</a>
+			
+		</div>
+		<% }) %>
 </div>
+
 <script>
     var markers = <%- JSON.stringify(favorites) %>;
 </script>

@@ -2,14 +2,18 @@ var express = require('express');
 var router = express.Router();
 var db = require('../models');
 
-// current : /favorites
+
 
 router.get("/", function(req,res){
-	db.user.findById(req.session.user).then(function(user){
-		user.getFavorites().then(function(favorites){
+	if(req.session.user){
+		db.user.findById(req.session.user).then(function(user){
+			user.getFavorites().then(function(favorites){
 			res.render("favorites", {favorites:favorites});
-		});	
-	});
+			});	
+		});
+	} else {
+		res.redirect("/login");
+	}
 });
 
 router.post("/", function(req,res){
@@ -51,5 +55,20 @@ router.post("/", function(req,res){
 		res.redirect("/login");
 	}
 });
+
+// router.get("/delete/:id",function(req,res){
+// 	console.log("TINPGWNEP"+req.session.user);
+// 	var id = parseInt(req.params.id);
+// 	db.favorite.find({where : {id: id}}).then(function(favorite){
+// 		console.log("TINPGWNEP"+req.session.user);
+// 		if(id >= 0 && id < favorite.length){
+// 			favorite.destroy();
+// 			res.send("Favorite has been deteted");
+// 			res.redirect("/favorites");
+// 		} else {
+// 			res.status(404).send("Favorite does not exist")
+// 		}
+// 	});
+// });
 
 module.exports = router;

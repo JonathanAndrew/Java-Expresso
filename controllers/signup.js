@@ -22,7 +22,10 @@ router.post("/", function(req,res){
 		}
 		}).spread(function(user, created){
 			if(created){
-				res.redirect("/");
+				req.session.user = user.id;
+				req.flash('success', 'You are logged in');
+				res.redirect("/favorites");
+				// res.redirect("/");
 			}else{
 				res.send("This user was already created")
 			}
