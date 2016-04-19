@@ -56,6 +56,14 @@ router.post("/", function(req,res){
 	}
 });
 
+router.delete("/:id", function(req,res){
+	var id = req.params.id;
+	db.favorite.destroy({
+		where: {id:id}
+	}).then(function(err){
+		res.send("destroyed");
+	});
+})
 // router.get("/delete/:id",function(req,res){
 // 	console.log("TINPGWNEP"+req.session.user);
 // 	var id = parseInt(req.params.id);

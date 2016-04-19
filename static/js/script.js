@@ -7,7 +7,7 @@ var initMap = function() {
   });
 
   // for each marker passed through, add it to the map with a popup
-  console.log(marker);
+  
   var googleMarker = new google.maps.Marker({
     position: position,
     title: marker.name,

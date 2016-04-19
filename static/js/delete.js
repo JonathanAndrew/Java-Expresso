@@ -2,17 +2,21 @@ $(document).ready(function(){
 
 $('.delete-link').on('click',function(e){
 	e.preventDefault();
-	var token = $(this).data('token');
+	// var token = $(this).data('token');
 	var myUrl = $(this).attr('href');
 	console.log(myUrl);
 	$.ajax({
-		method:'DELETE',
 		url:myUrl,
-        type: 'post',
-        data: token,
+        type: 'DELETE',
+        // data: token,
 	}).done(function(req,res){
-		res.send('favorite deleted')
+		location.reload();
+		console.log('favorite deleted')
 	});
+});
+
+$('#favBTN').on("click",function(){
+	$('body').css("background-image", "url(/image/coffee.png)");
 });
 
 });
