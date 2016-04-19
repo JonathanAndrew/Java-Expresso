@@ -637,7 +637,7 @@ body{
 
 
 .title{
-	font-size: 3.2em;
+	font-size: 2em;
     margin-left: 2%;
     width: 450px;
 }
@@ -699,7 +699,7 @@ body{
 	background-repeat: repeat;
 }
 .title{
-	font-size: 3.2em;
+	font-size: 2em;
 	margin-left: 2%;
 	width: 465px;
 }
@@ -849,7 +849,7 @@ body{
 	background-repeat: repeat;
 }
 .title{
-	font-size: 2.5em;
+	font-size: 2em;
 	margin-left: 4%;
 	width: 400px;
 }
@@ -1137,6 +1137,10 @@ body{
 	border: none;
 }
 
+.navbar{
+	height: 50px;
+}
+
 .navbar-right{
 	width: 170px;
 	margin-right: 0;
@@ -1389,6 +1393,31 @@ body{
 	width: 399px;
 }
 
+.container{
+	width: 399px;
+}
+
+.mission-text-line-two{
+	margin-top: 0;
+}
+
+.mission {
+    padding: 8%;
+    width: 95%;
+}
+
+.title{
+	margin-left: 0;
+	font-size: 1.8em;
+	width: 265px;
+}
+
+.searchBox{
+	margin-top: 100%;
+	width: 200px;
+	left: 25.5%;
+}
+
 .favoritesPage{
 	max-width: 399px;
 }
@@ -1400,8 +1429,11 @@ body{
 	margin-bottom: 0;
 }
 
+.login-form {
+    width: 350px;
+}
 .well{
-	width: 90%;
+	width: 80%;
 }
 
 .navbar-nav{
@@ -1411,6 +1443,7 @@ body{
 .navbar-toggle{
 	border: 1px solid #000 !important;
 	margin-top: 20px;
+	margin-right: 30px;
 }
 
 .navbar-collapse.collapse {
@@ -1455,6 +1488,11 @@ body{
 }
 .navbar{
 	height: 50px;
+}
+
+.backBTN {
+    margin-top: -110px;
+    font-size: 1em;
 }
 
 }
