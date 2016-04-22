@@ -1,5 +1,14 @@
 $(document).ready(function(){
 
+$('#search').on('click',function(){
+	$('.loading').show();
+	$('#search').hide();
+});
+$('.backBTN').on('click',function(){
+	$('.backBTN').hide();
+	$('.favoritesPage').hide();
+	$('.loading').show();
+})
 $('.delete-link').on('click',function(e){
 	e.preventDefault();
 	// var token = $(this).data('token');
