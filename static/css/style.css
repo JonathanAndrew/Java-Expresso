@@ -186,13 +186,13 @@ text-align: center;
     box-shadow: 2px 2px #000;
     font-size: 2em;
 }
-.searchBox:hover{
+/*.searchBox:hover{
 	width: 200px;
 	font-size: 2.2em;
 	color: #fff;
 	text-decoration: underline;
 	background-color: limegreen;
-}
+}*/
 
 .coffeeShops,.favTitle{
 	color: #fff;
