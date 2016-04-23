@@ -32,9 +32,10 @@
 			<ul class="nav navbar-nav navbar-right">
 
 			<% if(!currentUser) { %>
-
+				<li class="link homeBTN"><a href="/" class="home" ><img src="../images/home.png"/></a></li>
 				<li class="linkBTN link"><a href="/login">Login</a></li>
 				<li class="linkBTN link"><a href="/signup">Sign-up</a></li>
+
 
 			<% } else { %>	
 
@@ -52,7 +53,7 @@
 	<%- body %>
 
 	<footer>
-	<h1 class="copyRight">&#169 Jonathan Stevenson 2016</h1></footer>
+	<h3 class="copyRight">&#169 Jonathan Stevenson 2016</h3></footer>
 </div>
 <script type="text/javascript" src="/js/geoLocation.js"></script>
 <script type="text/javascript" src="/js/main.js"></script>

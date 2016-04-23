@@ -13,11 +13,22 @@
 			<a href="/favorites/<%=favorites.id%>" class="delete-link btn delete btn-danger" action="/favorites/delete/<%=favorites.id%>" method="GET"  data-token="{{ csrf_token() }}" role="form">X
 				<!-- <button type="submit" class="btn delete btn-danger">X</button> -->
 			</a>
-			<h1 class="name"><%= favorites.name  %> <img class="rating"src="<%= favorites.rating_img_url_large %>"/>  </h1>
+			<h1 class="name"><%= favorites.name  %> </h1>
+			<img class="rating"src="<%= favorites.rating_img_url_large %>"/>  
 			
 			<p class="address">Address: <%= favorites.address%> </p>
-			<p class="info">Phone-Number: <%= favorites.phone_number%></p>
-			<p class="info">Open/Closed: <% if (favorites.is_closed == false){ %>
+			<p class="info phone">Phone Number:</br> <% if (favorites.phone == null){ %>
+
+			<span>n/a</span>
+
+			<% } else { %>
+
+				<span><%= favorites.phone %></span>
+
+			<% } %>
+
+			</p>
+			<p class="info oc">Open/Closed: <% if (favorites.is_closed == false){ %>
 
 					<span class="open">Open</span>
 
