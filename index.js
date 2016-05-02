@@ -60,9 +60,6 @@ app.use("/favorites", require("./controllers/favorites.js"));
 app.use("/users", require("./controllers/users.js"));
 app.use("/signup", require("./controllers/signup.js"));
 
-
-
-
 // var port = 3000;
 // app.listen("Listening to the smooth sounds of port " + port);
 

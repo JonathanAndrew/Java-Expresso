@@ -13,7 +13,6 @@ var yelp = new Yelp({
 
 // See http://www.yelp.com/developers/documentation/v2/search_api
 
-
 router.get("/",function(req,res){
 yelp.search({ term: 'coffee', ll: req.query.ll })
 .then(function (data) {
@@ -26,7 +25,5 @@ yelp.search({ term: 'coffee', ll: req.query.ll })
 
 
 })
-
-
 
 module.exports = router;

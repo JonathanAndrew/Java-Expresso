@@ -1,34 +1,23 @@
 'use strict';
 var bcrypt = require('bcrypt');
 
-
 module.exports = function(sequelize, DataTypes) {
   var user = sequelize.define('user', {
     name: DataTypes.STRING,
-
     email : {
       type : DataTypes.STRING,
-
       validate : {
-
         isEmail : true
-
       }
     }, 
-
     password: {
-
       type : DataTypes.STRING,
-
       validate : {
-
         len : [8,20]
-
       } 
     },
   },
     {
-
     classMethods: {
       associate: function(models) {
         // associations can be defined here
