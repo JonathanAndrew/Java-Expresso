@@ -29,13 +29,13 @@ Made by[Jonathan Stevenson](https://github.com/JonathanAndrew).
 
 ##User stories 
 
-*As a seattleite who drinks coffee, I want to know the location of coffee shops besides Starbucks.
-*As a user, I would like to get directions on a map to coffee shop.
-*As a user, I want to find the closest coffee shop from my current location.
-*As a user, I want to be able to save coffee shops to my favorites page for later use.
-*As a user, I want ratings that show me the best places to get coffee.
-*As a user, I would like contact information for coffee shop.
-*As a user, I would like to know whether the coffee shop is open or closed.
+	-As a seattleite who drinks coffee, I want to know the location of coffee shops besides Starbucks.
+	-As a user, I would like to get directions on a map to coffee shop.
+	-As a user, I want to find the closest coffee shop from my current location.
+	-As a user, I want to be able to save coffee shops to my favorites page for later use.
+	-As a user, I want ratings that show me the best places to get coffee.
+	-As a user, I would like contact information for coffee shop.
+	-As a user, I would like to know whether the coffee shop is open or closed.
 
 
 
