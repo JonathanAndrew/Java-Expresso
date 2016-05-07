@@ -24,7 +24,7 @@ Made by[Jonathan Stevenson](https://github.com/JonathanAndrew).
   - Implemented local user authentication
   - Implemented user favorites
   - Constant styling adjustments and testing
-  - Reviewed site for all error catching, and minor styling adjustments
+  - Reviewed site for error catching, and minor styling adjustments
 
 
 ##User stories 
